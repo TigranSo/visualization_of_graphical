@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block title %}{% endblock %}
+        <meta name="theme-color" content="#712cf9">
+        <link href="{{ url_for('static', filename ='css/style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+    <header>
+        <nav>
+            <div class="container">
+           <a href="/"><img src="{{ url_for('static', filename='img/logo.webp') }}" alt="Логотип" /></a>
+            <ul class="nav">
+                <li><a href="/">Визуализация</a></li>
+                <li><a href="/add_form">Добавить устройство</a></li>
+                <li><a href="/connect">Связь между устройствами</a></li>
+                <li><a href="/add_connection_type">Добавить тип связи</a></li>
+                <li><a href="/delete_device_n">Удаления устройства</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="{{ url_for('static', filename ='js/main.js') }}"></script>
+    </body>
+</html>

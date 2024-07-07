@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Подтверждение удаления устройства</title>
+{% endblock %}
+
+{% block content %}
+<h1>Вы уверены, что хотите удалить это устройство?</h1>
+<form method="post" action="/delete_device/{{ device.id }}">
+  <button type="submit">Удалить</button>
+  <a href="/">Отмена</a>
+</form>
+{% endblock %}

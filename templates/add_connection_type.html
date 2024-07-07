@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Добавить новый тип связи</title>
+{% endblock %}
+
+{% block content %}
+<h1>Добавить новый тип связи</h1>
+<form method="post" action="/add_connection_type">
+    <input type="text" name="type_name" placeholder="Введите тип связи" required>
+    <button type="submit">Добавить тип связи</button>
+</form>
+{% endblock %}

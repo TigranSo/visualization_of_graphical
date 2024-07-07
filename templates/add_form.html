@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Добавить новое устройство</title>
+{% endblock %}
+
+{% block content %}
+<h1>Добавить новое устройство</h1>
+<form method="post" action="/add_form" enctype="multipart/form-data">
+    <div>
+        <label for="name">Название устройства:</label>
+        <input type="text" id="name" name="name" placeholder="Название устройства" required>
+    </div>
+    <div>
+        <label for="device_type">Тип устройства:</label>
+        <select id="device_type" name="device_type" required>
+            <option value="">Выберите тип устройства</option>
+            <option value="принтер">Принтер</option>
+            <option value="компьютер">Компьютер</option>
+            <option value="компьютер">Телевизор</option>
+        </select>
+    </div>
+    <div>
+        <label for="device_image">Изображение устройства:</label>
+        <input type="file" id="device_image" name="device_image" accept="image/png, image/jpeg">
+    </div>
+    <button type="submit">Добавить устройство</button>
+</form>
+{% endblock %}
+

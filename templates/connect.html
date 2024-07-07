@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Создать связь между устройствами</title>
+{% endblock %}
+
+{% block content %}
+<h1>Создать связь между устройствами</h1>
+<form method="post" action="/connect">
+    <div>
+        <label for="source_id">Источник:</label>
+        <select id="source_id" name="source_id" required>
+            {% for device in devices %}
+            <option value="{{ device.id }}">{{ device.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="destination_id">Пункт назначения:</label>
+        <select id="destination_id" name="destination_id" required>
+            {% for device in devices %}
+            <option value="{{ device.id }}">{{ device.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="connection_type_id">Тип связи:</label>
+        <select id="connection_type_id" name="connection_type_id" required>
+            {% for type in connection_types %}
+            <option value="{{ type.id }}">{{ type.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Создать связь</button>
+</form>
+{% endblock %}
